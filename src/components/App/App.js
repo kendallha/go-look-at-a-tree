@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './App.css';
 import treeData from '../../assets/treeData';
 import TreeDisplay from '../TreeDisplay/TreeDisplay';
+import Header from '../Header/Header';
 
 class App extends Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class App extends Component {
   render() {
     return (
       <>
-        <h1>Go Look at a Tree</h1>
+        <Header />
         {
         this.state.trees.length &&
         <TreeDisplay tree={this.state.trees[0]} />
