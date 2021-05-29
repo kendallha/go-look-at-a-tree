@@ -24,6 +24,7 @@ class Form extends Component {
       id: Date.now(),
       ...this.state
     }
+    this.props.addTree(newTree);
     this.clearInputs();
   }
 
@@ -75,7 +76,9 @@ class Form extends Component {
           type='text' 
           placeholder='Lifespan' 
           name='lifespan' 
-          value={this.state.lifespan}/>
+          value={this.state.lifespan}
+          onChange={e => this.handleChange(e)}
+          />
         <input 
           type='text' 
           placeholder='Fun fact' 
