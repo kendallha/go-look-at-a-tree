@@ -1,6 +1,7 @@
 const treeData = [
     { "id": 1,
       "name": "Quaking Aspen",
+      "region": "Cooler areas of North America",
       "scientificName": "Populus tremuloides",
       "averageHeight": "20-80 feet",
       "lifespan": "50-60 years",
