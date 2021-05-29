@@ -93,7 +93,7 @@ class Form extends Component {
           value={this.state.image}
           onChange={e => this.handleChange(e)}
           />
-        <button>Add Tree</button>
+        <button onClick={e => this.submitTree(e)}>Add Tree</button>
       </form>
     )
   }
