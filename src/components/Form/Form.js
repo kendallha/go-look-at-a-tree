@@ -24,6 +24,19 @@ class Form extends Component {
       id: Date.now(),
       ...this.state
     }
+    this.clearInputs();
+  }
+
+  clearInputs = () => {
+    this.setState({
+      name: '',
+      region: '',
+      scientificName: '',
+      averageHeight: '',
+      lifespan: '',
+      fact: '',
+      image: ''
+    })
   }
 
   render() {
