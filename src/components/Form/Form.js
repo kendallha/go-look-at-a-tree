@@ -4,18 +4,26 @@ class Form extends Component {
   constructor() {
     super()
     this.state = {
-      "name": '',
-      "region": '',
-      "scientificName": '',
-      "averageHeight": '',
-      "lifespan": '',
-      "fact": '',
-      "image": ''
+      name: '',
+      region: '',
+      scientificName: '',
+      averageHeight: '',
+      lifespan: '',
+      fact: '',
+      image: ''
     }
   }
 
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value })
+  }
+
+  submitTree = (e) => {
+    e.preventDefault();
+    const newTree = {
+      id: Date.now(),
+      ...this.state
+    }
   }
 
   render() {
