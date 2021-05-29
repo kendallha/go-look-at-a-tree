@@ -16,6 +16,10 @@ class App extends Component {
     this.setState({ trees: treeData })
   }
 
+  addTree = (newTree) => {
+    this.setState({ trees: [...this.state.trees, newTree] })
+  }
+
   render() {
     return (
       <>
