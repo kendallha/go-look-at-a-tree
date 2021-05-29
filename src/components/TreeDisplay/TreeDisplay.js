@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TreeDisplay = () => {
+const TreeDisplay = ({ tree }) => {
   return (
     <article>
       <img src={imgURL}
