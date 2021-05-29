@@ -17,6 +17,10 @@ class App extends Component {
     this.setState({ trees: treeData })
   }
 
+  getRandomTree = (min, max) => {
+      return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+
   addTree = (newTree) => {
     this.setState({ trees: [...this.state.trees, newTree] })
   }
@@ -27,7 +31,7 @@ class App extends Component {
         <Header />
         {
         this.state.trees.length &&
-        <TreeDisplay tree={this.state.trees[0]} />
+        <TreeDisplay tree={this.state.trees[this.getRandomTree(0, this.state.trees.length)]} />
         }
         <Form addTree={this.addTree} />
       </>
