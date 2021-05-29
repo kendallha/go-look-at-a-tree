@@ -42,6 +42,7 @@ class Form extends Component {
   render() {
     return(
       <form>
+        <h1>Add Your Favorite Tree</h1>
         <input 
           type='text' 
           placeholder='Common name' 
@@ -94,3 +95,5 @@ class Form extends Component {
     )
   }
 }
+
+export default Form;

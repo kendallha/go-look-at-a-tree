@@ -3,6 +3,7 @@ import './App.css';
 import treeData from '../../assets/treeData';
 import TreeDisplay from '../TreeDisplay/TreeDisplay';
 import Header from '../Header/Header';
+import Form from '../Form/Form';
 
 class App extends Component {
   constructor(props) {
@@ -28,6 +29,7 @@ class App extends Component {
         this.state.trees.length &&
         <TreeDisplay tree={this.state.trees[0]} />
         }
+        <Form addTree={this.addTree} />
       </>
     )
   }
