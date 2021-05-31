@@ -1,0 +1,40 @@
+article {
+  display: flex;
+  justify-content: space-around;
+}
+
+.tree-image {
+  width: 400px;
+  border-radius: 2rem;
+  margin: 3rem;
+  box-shadow: 5px 5px 5px grey;
+}
+
+.tree-details {
+  width: 50rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tree-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+}
+
+.sci-name {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  padding-left: 2rem;
+  margin-top: -2rem;
+}
+
+.region, .height, .lifespan {
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+.tree-fact {
+  font-size: 1.2rem;
+  width: 80%;  
+}
