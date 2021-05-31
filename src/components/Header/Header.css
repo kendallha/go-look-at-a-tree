@@ -4,3 +4,59 @@ header > h1 {
   font-weight: 700;
   text-align: center;
 }
+
+.tree-button {
+  box-sizing: border-box;
+  background-color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  line-height: 1;
+  margin: 20px;
+  padding: 1.1em 2.5em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  border: 4px solid #adff91;
+  border-radius: 1rem;
+  color: #000;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  -webkit-transition: color 150ms ease-in-out;
+  transition: color 150ms ease-in-out;
+  box-shadow: 0px 3px 5px grey;
+}
+
+.tree-button:hover {
+  color: #fff;
+  text-shadow: 2px 2px 2px gray;
+}
+
+.tree-button:after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 0;
+  height: 100%;
+  background: #adff91;
+  z-index: -1;
+  -webkit-transition: width 150ms ease-in-out;
+  transition: width 150ms ease-in-out;
+}
+
+.tree-button:hover:after {
+  width: 110%;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
