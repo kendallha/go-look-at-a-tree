@@ -30,11 +30,20 @@ class App extends Component {
     return (
       <>
         <Header />
-        {
-        this.state.trees.length &&
-        <TreeDisplay tree={this.state.trees[this.getRandomTree(0, this.state.trees.length)]} />
-        }
-        <Form addTree={this.addTree} />
+        <Route exact path='/'>
+          {this.state.trees.length &&
+          <TreeDisplay tree={this.state.trees[this.getRandomTree(0, this.state.trees.length - 1)]} />
+          }
+        </Route>
+        <Route
+        exact path="/:id"
+        render={({ match }) => {
+          const id  = match.params.id;
+          return <TreeDisplay id={id} />
+        }}/>
+        <Route path='/addtree'> 
+          <Form addTree={this.addTree} />
+        </Route>
       </>
     )
   }
