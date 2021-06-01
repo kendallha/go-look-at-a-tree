@@ -27,9 +27,10 @@ class App extends Component {
   }
 
   render() {
+    if (this.state.trees.length) {
     return (
       <>
-        <Header />
+        <Header treeData={this.state.trees} getRandomTree={this.getRandomTree}/>
         <Route exact path='/'>
           {this.state.trees.length &&
           <TreeDisplay tree={this.state.trees[this.getRandomTree(0, this.state.trees.length - 1)]} />
@@ -39,13 +40,17 @@ class App extends Component {
         exact path="/:id"
         render={({ match }) => {
           const id  = match.params.id;
-          return <TreeDisplay id={id} />
+          const foundTree = this.state.trees.find(tree => tree.id === id)
+          return <TreeDisplay tree={foundTree} />
         }}/>
         <Route path='/addtree'> 
           <Form addTree={this.addTree} />
         </Route>
       </>
     )
+    } else {
+      return null
+    }
   }
 }
 
