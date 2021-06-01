@@ -4,6 +4,7 @@ import treeData from '../../assets/treeData';
 import TreeDisplay from '../TreeDisplay/TreeDisplay';
 import Header from '../Header/Header';
 import Form from '../Form/Form';
+import { Route } from 'react-router-dom';
 
 class App extends Component {
   constructor(props) {
