@@ -37,7 +37,7 @@ class App extends Component {
           }
         </Route>
         <Route
-        exact path="/:id"
+        exact path="/tree/:id"
         render={({ match }) => {
           const id  = match.params.id;
           const foundTree = this.state.trees.find(tree => tree.id === id)

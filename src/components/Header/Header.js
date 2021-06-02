@@ -7,8 +7,8 @@ const Header = ({treeData, getRandomTree}) => {
     <header>
       <h1>Go Look at a Tree</h1>
       <div className="button-container">
-        <Link to={`/${treeData[getRandomTree(0, treeData.length - 1)].id}`}><button className="tree-button">Get a Tree</button></Link>
-        <button className="tree-button">Add a Tree</button>
+        <Link to={`/tree/${treeData[getRandomTree(0, treeData.length - 1)].id}`}><button className="tree-button">Get a Tree</button></Link>
+        <Link to='/addtree'><button className="tree-button">Add a Tree</button></Link>
       </div>
     </header>
   )
