@@ -10,16 +10,19 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      trees: []
+      trees: [],
+      currentTree: {}
     }
   }
 
   componentDidMount() {
-    this.setState({ trees: treeData })
+    this.setState({ 
+      trees: treeData,
+      currentTree: treeData[this.getRandomIndex(0, treeData.length - 1)] 
+    })
   }
 
-  getRandomTree = (min, max) => {
-    console.log("invoked")
+  getRandomIndex = (min, max) => {
       return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
@@ -27,23 +30,20 @@ class App extends Component {
     this.setState({ trees: [...this.state.trees, newTree] })
   }
 
+  setNewTree = () => {
+    this.setState({ currentTree: this.state.trees[this.getRandomIndex(0, treeData.length - 1)] })
+  }
+
   render() {
     if (this.state.trees.length) {
     return (
       <>
-        <Header treeData={this.state.trees} getRandomTree={this.getRandomTree}/>
+        <Header setNewTree={this.setNewTree}/>
         <Route exact path='/'>
           {this.state.trees.length &&
-          <TreeDisplay tree={this.state.trees[this.getRandomTree(0, this.state.trees.length - 1)]} />
+          <TreeDisplay tree={this.state.currentTree} />
           }
         </Route>
-        <Route
-        exact path="/tree/:id"
-        render={({ match }) => {
-          const id  = match.params.id;
-          const foundTree = this.state.trees.find(tree => tree.id === id)
-          return <TreeDisplay tree={foundTree} />
-        }}/>
         <Route path='/addtree'> 
           <Form addTree={this.addTree} />
         </Route>
