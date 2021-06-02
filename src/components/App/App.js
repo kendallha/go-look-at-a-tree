@@ -19,6 +19,7 @@ class App extends Component {
   }
 
   getRandomTree = (min, max) => {
+    console.log("invoked")
       return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
