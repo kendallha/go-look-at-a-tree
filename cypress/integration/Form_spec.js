@@ -26,7 +26,7 @@ describe('Form', () => {
   it('Should only create a new tree if all input fields are filled out', () => {
 
   })
-  it('Should display the new tree after a new tree is successfully created', () => {
+  it('Should display a message stating the new tree was successfully created after the new tree is successfully created', () => {
 
   })
   it('Should return an error message if the user does not fill out all input fields',() => {
