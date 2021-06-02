@@ -1,13 +1,14 @@
 import React from 'react';
-import './Header.css'
+import './Header.css';
+import { Link } from 'react-router-dom';
 
-const Header = () => {
+const Header = ({setNewTree}) => {
   return (
     <header>
       <h1>Go Look at a Tree</h1>
       <div className="button-container">
-        <button className="tree-button">Get a Tree</button>
-        <button className="tree-button">Add a Tree</button>
+        <Link to='/'><button onClick={setNewTree} className="tree-button">Get a Tree</button></Link>
+        <Link to='/addtree'><button className="tree-button">Add a Tree</button></Link>
       </div>
     </header>
   )
