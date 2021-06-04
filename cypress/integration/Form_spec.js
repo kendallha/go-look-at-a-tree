@@ -33,20 +33,23 @@ describe('Form', () => {
       .get('form input[name="image"]').should('have.value', 'tree image link')
   })
   it('Should be able to create a new tree when the Add Tree button is clicked', () => {
-    //do we want to actually test this? does it need an intercept so we don't make a bunch of trees? delete it after?
+    //does it need an intercept so we don't make a bunch of trees?
+    //delete it after?
   })
   it('Should only create a new tree if all input fields are filled out', () => {
-    //same concern as above
+    //does it need an intercept so we don't make a bunch of trees?
+    //delete it after?
   })
   it('Should display a message stating the new tree was successfully created after the new tree is successfully created', () => {
-    //same concern as above
+    //does it need an intercept so we don't make a bunch of trees?
+    //delete it after?
   })
   it('Should return an error message if the user does not fill out all input fields',() => {
-    //same concern as above
+    //does it need an intercept so we don't make a bunch of trees?
+    //delete it after?
   })
   it('Should return an error message if the image url is not properly formatted', () => {
-    //same concern as above
-    //check that image path works in code? or if it doesn't, on render, provide a link for googling that type of tree???
+    //check that image path works in code? or if it doesn't, then on render provide a link for googling that type of tree???
     //include directions for user to right click, click "copy image address", and use that link
   })
 })
