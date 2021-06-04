@@ -5,6 +5,7 @@ import TreeDisplay from '../TreeDisplay/TreeDisplay';
 import Header from '../Header/Header';
 import Form from '../Form/Form';
 import { Route } from 'react-router-dom';
+import { retrieveTrees } from '../../utilities/ApiCalls'
 
 class App extends Component {
   constructor(props) {
@@ -15,11 +16,16 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {
-    this.setState({ 
-      trees: treeData,
-      currentTree: treeData[this.getRandomIndex(0, treeData.length - 1)] 
-    })
+  componentDidMount = async () => {
+    try {
+      const fetchedTrees = await retrieveTrees();
+      this.setState({
+        trees: fetchedTrees,
+        currentTree: fetchedTrees[this.getRandomIndex(0, treeData.length - 1)]
+      })
+    } catch (e) {
+      this.setState({error: "No trees found. Smokey the bear is sad. Go look outside."})
+    }
   }
 
   getRandomIndex = (min, max) => {
@@ -44,7 +50,7 @@ class App extends Component {
           <TreeDisplay tree={this.state.currentTree} />
           }
         </Route>
-        <Route path='/addtree'> 
+        <Route path='/addtree'>
           <Form addTree={this.addTree} />
         </Route>
       </>
