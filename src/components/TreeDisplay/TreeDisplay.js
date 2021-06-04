@@ -3,7 +3,7 @@ import './TreeDisplay.css';
 
 const TreeDisplay = ({ tree }) => {
   return (
-    <article>
+    <article className='tree-display'>
       <img alt={`${tree.name} tree`} src={tree.image} className="tree-image"/>
       <div className="tree-details">
         <h1 className="tree-name">{tree.name}</h1>
