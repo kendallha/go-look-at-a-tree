@@ -5,7 +5,7 @@ export const retrieveTrees = async () => {
   return data
 }
 
-export const addTree = async (newData) => {
+export const createTree = async (newData) => {
   const response = await fetch('https://go-look-at-a-tree-api.herokuapp.com/api/v1/trees', {
     method: 'POST',
     headers: {

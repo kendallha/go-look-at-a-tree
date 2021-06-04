@@ -6,8 +6,8 @@ class Form extends Component {
     this.state = {
       name: '',
       region: '',
-      scientificName: '',
-      averageHeight: '',
+      scientific_name: '',
+      average_height: '',
       lifespan: '',
       fact: '',
       image: ''
@@ -21,7 +21,6 @@ class Form extends Component {
   submitTree = (e) => {
     e.preventDefault();
     const newTree = {
-      id: Date.now(),
       ...this.state
     }
     this.props.addTree(newTree);
@@ -32,8 +31,8 @@ class Form extends Component {
     this.setState({
       name: '',
       region: '',
-      scientificName: '',
-      averageHeight: '',
+      scientific_name: '',
+      average_height: '',
       lifespan: '',
       fact: '',
       image: ''
@@ -44,52 +43,52 @@ class Form extends Component {
     return(
       <form>
         <h1>Add Your Favorite Tree</h1>
-        <input 
-          type='text' 
-          placeholder='Common name' 
-          name='name' 
+        <input
+          type='text'
+          placeholder='Common name'
+          name='name'
           value={this.state.name}
           onChange={e => this.handleChange(e)}
           />
-        <input 
-          type='text' 
-          placeholder='Scientific name' 
-          name='scientificName' 
-          value={this.state.scientificName}
+        <input
+          type='text'
+          placeholder='Scientific name'
+          name='scientific_name'
+          value={this.state.scientific_name}
           onChange={e => this.handleChange(e)}
           />
-        <input 
-          type='text' 
-          placeholder='Region' 
-          name='region' 
+        <input
+          type='text'
+          placeholder='Region'
+          name='region'
           value={this.state.region}
           onChange={e => this.handleChange(e)}
           />
-        <input 
-          type='text' 
-          placeholder='Average height' 
-          name='averageHeight' 
-          value={this.state.averageHeight}
+        <input
+          type='text'
+          placeholder='Average height'
+          name='average_height'
+          value={this.state.average_height}
           onChange={e => this.handleChange(e)}
           />
-        <input 
-          type='text' 
-          placeholder='Lifespan' 
-          name='lifespan' 
+        <input
+          type='text'
+          placeholder='Lifespan'
+          name='lifespan'
           value={this.state.lifespan}
           onChange={e => this.handleChange(e)}
           />
-        <input 
-          type='text' 
-          placeholder='Fun fact' 
-          name='fact' 
+        <input
+          type='text'
+          placeholder='Fun fact'
+          name='fact'
           value={this.state.fact}
           onChange={e => this.handleChange(e)}
           />
-        <input 
-          type='text' 
-          placeholder='Image URL' 
-          name='image' 
+        <input
+          type='text'
+          placeholder='Image URL'
+          name='image'
           value={this.state.image}
           onChange={e => this.handleChange(e)}
           />
