@@ -49,23 +49,22 @@ class App extends Component {
   }
 
   render() {
-    if (this.state.trees.length) {
     return (
       <>
         <Header setNewTree={this.setNewTree}/>
-        <Route exact path='/'>
-          {this.state.trees.length &&
-          <TreeDisplay tree={this.state.currentTree} />
-          }
-        </Route>
+        <Route
+          exact path='/'
+          render={() => {
+            return (
+              <TreeDisplay tree={this.state.currentTree} error={this.state.error} />
+            )
+          }}
+        />
         <Route path='/addtree'>
           <Form addTree={this.addTree} />
         </Route>
       </>
     )
-    } else {
-      return null
-    }
   }
 }
 
