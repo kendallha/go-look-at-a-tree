@@ -4,7 +4,7 @@ import './Error.css';
 const Error = ({ error }) => {
   return (
     <>
-      <h1>Error: {error}</h1>
+      <h1 className='error-msg'>Error: {error}</h1>
     </>
   )
 }

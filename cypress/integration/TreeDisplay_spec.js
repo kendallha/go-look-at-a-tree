@@ -36,11 +36,22 @@ describe('TreeDisplay', () => {
   })
 })
 
-describe('TreeDisplay Error', () => {
-  it('Should render and error message when there is an error with fetching data for trees', () => {
-    cy.intercept('https://go-look-at-a-tree-api.herokuapp.com/api/v1/tr', {})
+describe('TreeDisplay Loading', () => {
+  it('Should render a loading message while waiting for fetched data for trees', () => {
+    cy.intercept('https://go-look-at-a-tree-api.herokuapp.com/api/v1/trees', [])
       .visit('http://localhost:3000')
-      .get('h3').contains('Error')
-      //create and error component
+      .get('.loading-msg')
+      .should('have.text', "Loading...")
+  })
+})
+
+describe('TreeDisplay Error', () => {
+  it('Should render an error message when there is an error with fetching data for trees', () => {
+    cy.intercept('https://go-look-at-a-tree-api.herokuapp.com/api/v1/trees', {
+      statusCode:404
+    })
+      .visit('http://localhost:3000')
+      .get('.error-msg')
+      .should('have.text', 'Error: No trees found. Smokey the bear is sad. Go look outside.')
   })
 })

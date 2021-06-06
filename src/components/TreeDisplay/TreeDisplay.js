@@ -5,8 +5,8 @@ import Error from '../ErrorMsg/Error'
 const TreeDisplay = ({ tree, error }) => {
   return (
     <>
-      {!tree &&
-        <h1>Loading...</h1>
+      {!tree && !error &&
+        <h1 className='loading-msg'>Loading...</h1>
       }
       {error &&
         <Error error={error}/>
