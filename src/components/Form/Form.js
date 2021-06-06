@@ -33,6 +33,7 @@ class Form extends Component {
         }
         this.props.addTree(newTree);
         this.clearInputs();
+        this.setState({ error: null })
     } else {
       this.setState({ error: 'Please fill out all input fields'})
     }
