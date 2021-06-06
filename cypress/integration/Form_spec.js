@@ -51,24 +51,37 @@ describe('Form', () => {
     cy.get('form input[name="image"]').type('tree image link')
       .get('form input[name="image"]').should('have.value', 'tree image link')
   })
-  it('Should be able to create a new tree when the Add Tree button is clicked', () => {
-    //does it need an intercept so we don't make a bunch of trees?
-    //delete it after?
+  describe('Form Error Handling', () => {
+    beforeEach(() => {
+      cy.get('form input[name="name"]').type('tree name')
+        .get('form input[name="scientificName"]').type('tree scientific name')
+        .get('form input[name="region"]').type('tree region')
+        .get('form input[name="averageHeight"]').type('tree average height')
+        .get('form input[name="lifespan"]').type('tree lifespan')
+        .get('form input[name="fact"]').type('tree fact')
+    })
+    it('Should only create a new tree if all input fields are filled out', () => {
+      //does it need an intercept so we don't make a bunch of trees?
+      //delete it after?
+    })
+    it('Should return an error message if the user does not fill out all input fields',() => {
+      //does it need an intercept so we don't make a bunch of trees?
+      //delete it after?
+    })
+    it('Should return an error message if the image url is not properly formatted', () => {
+      //check that image path works in code? or if it doesn't, then on render provide a link for googling that type of tree???
+      //include directions for user to right click, click "copy image address", and use that link
+    })
   })
-  it('Should only create a new tree if all input fields are filled out', () => {
+
+  //not yet sure how to tackle these ones...
+
+  it('Should be able to create a new tree when the Add Tree button is clicked', () => {
     //does it need an intercept so we don't make a bunch of trees?
     //delete it after?
   })
   it('Should display a message stating the new tree was successfully created after the new tree is successfully created', () => {
     //does it need an intercept so we don't make a bunch of trees?
     //delete it after?
-  })
-  it('Should return an error message if the user does not fill out all input fields',() => {
-    //does it need an intercept so we don't make a bunch of trees?
-    //delete it after?
-  })
-  it('Should return an error message if the image url is not properly formatted', () => {
-    //check that image path works in code? or if it doesn't, then on render provide a link for googling that type of tree???
-    //include directions for user to right click, click "copy image address", and use that link
   })
 })

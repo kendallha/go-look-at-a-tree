@@ -20,11 +20,21 @@ class Form extends Component {
 
   submitTree = (e) => {
     e.preventDefault();
-    const newTree = {
-      ...this.state
+    if (this.state.name &&
+      this.state.region &&
+      this.state.scientific_name &&
+      this.state.average_height &&
+      this.state.lifespan &&
+      this.state.fact &&
+      this.state.image) {
+        const newTree = {
+          ...this.state
+        }
+        this.props.addTree(newTree);
+        this.clearInputs();
+    } else {
+      this.setState({ error: 'Please fill out all input fields'})
     }
-    this.props.addTree(newTree);
-    this.clearInputs();
   }
 
   clearInputs = () => {

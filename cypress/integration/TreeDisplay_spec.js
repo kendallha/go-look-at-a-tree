@@ -45,7 +45,7 @@ describe('TreeDisplay Loading', () => {
   })
 })
 
-describe('TreeDisplay Error', () => {
+describe('TreeDisplay Error Handling', () => {
   it('Should render an error message when there is an error with fetching data for trees', () => {
     cy.intercept('https://go-look-at-a-tree-api.herokuapp.com/api/v1/trees', {
       statusCode:404
