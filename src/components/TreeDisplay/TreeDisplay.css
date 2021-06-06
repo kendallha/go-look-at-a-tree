@@ -1,4 +1,4 @@
-article {
+.tree-display {
   display: flex;
   justify-content: space-around;
 }
@@ -37,4 +37,31 @@ article {
 .tree-fact {
   font-size: 1.2rem;
   width: 80%;  
+}
+
+@media screen and (max-width: 800px) {
+  .tree-display {
+    flex-direction: column;
+  }
+
+  .tree-image {
+    margin: 2rem;
+    width: 80%;
+    align-self: center;
+  }
+
+  .tree-details {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .tree-name {
+    margin-top: -1.5rem;
+  }
+
+  .sci-name {
+    padding: 0rem;
+    margin-top: -3rem;
+  }
 }
