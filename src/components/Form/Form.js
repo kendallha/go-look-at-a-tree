@@ -45,7 +45,7 @@ class Form extends Component {
       <form>
         <h1>Add Your Favorite Tree</h1>
         <div className="form-row">
-          <label for="commonName">Common name</label>
+          <label htmlFor="commonName">Common name</label>
           <input
             type='text'
             id='commonName'
@@ -55,7 +55,7 @@ class Form extends Component {
           />
         </div>
         <div className="form-row">
-          <label for="scientificName">Scientific name</label>
+          <label htmlFor="scientificName">Scientific name</label>
           <input
             type='text'
             id='scientificName'
@@ -65,7 +65,7 @@ class Form extends Component {
           />
         </div>
         <div className="form-row">
-          <label for="region">Region</label>
+          <label htmlFor="region">Region</label>
           <input
             type='text'
             id='region'
@@ -75,7 +75,7 @@ class Form extends Component {
           />
         </div>
         <div className="form-row">
-          <label for="averageHeight">Average height</label>
+          <label htmlFor="averageHeight">Average height</label>
           <input
             type='text'
             id='averageHeight'
@@ -85,7 +85,7 @@ class Form extends Component {
           />
         </div>
         <div className="form-row">
-          <label for="lifespan">Lifespan</label>
+          <label htmlFor="lifespan">Lifespan</label>
           <input
             type='text'
             id='lifespan'
@@ -95,7 +95,7 @@ class Form extends Component {
           />
         </div>
         <div className="form-row">
-          <label for="funFact">Fun fact</label>
+          <label htmlFor="funFact">Fun fact</label>
           <input
             type='text'
             id='funFact'
@@ -105,7 +105,7 @@ class Form extends Component {
           />
         </div>
         <div className="form-row">
-          <label for="imageURL">Image URL</label>
+          <label htmlFor="imageURL">Image URL</label>
           <input
             type='text'
             id='imageURL'
