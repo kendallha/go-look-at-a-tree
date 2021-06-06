@@ -8,6 +8,18 @@ form {
 
 .form-row {
   display: flex;
-  width: 30rem;
+  width: 40rem;
   justify-content: space-between;
+}
+
+label {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+input {
+  width: 70%;
+  border-radius: .8rem;
+  padding: .5rem;
 }
