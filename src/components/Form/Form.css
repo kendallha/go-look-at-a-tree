@@ -3,7 +3,6 @@ form {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  /* height: 40%; */
 }
 
 form > h1 {
@@ -29,8 +28,6 @@ label {
   font-size: 1.3rem;
   white-space: nowrap;
   overflow: visible;
-  /* margin-top: .3rem; */
-  /* text-overflow: initial; */
 }
 
 input {
