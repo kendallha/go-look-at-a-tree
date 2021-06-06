@@ -45,70 +45,70 @@ class Form extends Component {
       <form>
         <h1>Add Your Favorite Tree</h1>
         <div className="form-row">
-          <label>Common name</label>
+          <label for="commonName">Common name</label>
           <input
             type='text'
-            placeholder='Common name'
+            id='commonName'
             name='name'
             value={this.state.name}
             onChange={e => this.handleChange(e)}
           />
         </div>
         <div className="form-row">
-          <label>Scientific name</label>
+          <label for="scientificName">Scientific name</label>
           <input
             type='text'
-            placeholder='Scientific name'
+            id='scientificName'
             name='scientific_name'
             value={this.state.scientific_name}
             onChange={e => this.handleChange(e)}
           />
         </div>
         <div className="form-row">
-          <label>Region</label>
+          <label for="region">Region</label>
           <input
             type='text'
-            placeholder='Region'
+            id='region'
             name='region'
             value={this.state.region}
             onChange={e => this.handleChange(e)}
           />
         </div>
         <div className="form-row">
-          <label>Average height</label>
+          <label for="averageHeight">Average height</label>
           <input
             type='text'
-            placeholder='Average height'
+            id='averageHeight'
             name='average_height'
             value={this.state.average_height}
             onChange={e => this.handleChange(e)}
           />
         </div>
         <div className="form-row">
-          <label>Lifespan</label>
+          <label for="lifespan">Lifespan</label>
           <input
             type='text'
-            placeholder='Lifespan'
+            id='lifespan'
             name='lifespan'
             value={this.state.lifespan}
             onChange={e => this.handleChange(e)}
           />
         </div>
         <div className="form-row">
-          <label>Fun fact</label>
+          <label for="funFact">Fun fact</label>
           <input
             type='text'
-            placeholder='Fun fact'
+            id='funFact'
             name='fact'
             value={this.state.fact}
             onChange={e => this.handleChange(e)}
           />
         </div>
         <div className="form-row">
-          <label>Image URL</label>
+          <label for="imageURL">Image URL</label>
           <input
               type='text'
-              placeholder='Image URL'
+              id='imageURL'
               name='image'
               value={this.state.image}
               onChange={e => this.handleChange(e)}
