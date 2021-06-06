@@ -4,7 +4,7 @@ import TreeDisplay from '../TreeDisplay/TreeDisplay';
 import Header from '../Header/Header';
 import Form from '../Form/Form';
 import { Route } from 'react-router-dom';
-import { retrieveTrees, createTree } from '../../utilities/ApiCalls'
+import { retrieveTrees } from '../../utilities/ApiCalls'
 
 class App extends Component {
   constructor(props) {
@@ -31,14 +31,10 @@ class App extends Component {
       return Math.floor(Math.random() * (max - min + 1) + min);
   }
 
-  addTree = async (newTree) => {
-    try {
-      const postResponse = await createTree(newTree);
-      this.setState({ trees: [...this.state.trees, newTree] })
-    } catch (error) {
-      this.setState({error: error.message})
-    }
+  addTreeToState = (newTree) => {
+    this.setState({ trees: [...this.state.trees, newTree] })
   }
+
 
   setNewTree = () => {
     console.log(this.state.trees)
@@ -58,7 +54,7 @@ class App extends Component {
           }}
         />
         <Route path='/addtree'>
-          <Form addTree={this.addTree} />
+          <Form addTreeToState={this.addTreeToState} />
         </Route>
       </>
     )

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Error from '../ErrorMsg/Error'
 import './Form.css';
+import { createTree } from '../../utilities/ApiCalls'
 
 class Form extends Component {
   constructor() {
@@ -32,10 +33,10 @@ class Form extends Component {
         const newTree = {
           ...this.state
         }
-        this.props.addTree(newTree);
-        this.clearInputs();
-        this.setState({ error: null })
-        this.setState({ confirmation: 'Your new tree has been added to our forest!'})
+        this.addTree(newTree);
+
+        // this.setState({ error: null })
+
     } else {
       this.setState({ error: 'Please fill out all input fields'})
       this.setState({ confirmation: null })
@@ -52,6 +53,17 @@ class Form extends Component {
       fact: '',
       image: ''
     })
+  }
+
+  addTree = async (newTree) => {
+    try {
+      const postResponse = await createTree(newTree);
+      this.props.addTreeToState(newTree)
+      this.setState({ confirmation: 'Your new tree has been added to our forest!'})
+      this.clearInputs();
+    } catch (error) {
+      this.setState({error: error.message})
+    }
   }
 
   render() {
@@ -135,7 +147,7 @@ class Form extends Component {
         {this.state.error &&
           <Error error={this.state.error} />
         }
-        {this.state.confirmation &&
+        {this.state.confirmation && !this.state.error &&
           <h1 className='confirm-msg'>{this.state.confirmation}</h1>
         }
       </>
