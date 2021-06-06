@@ -107,14 +107,15 @@ class Form extends Component {
         <div className="form-row">
           <label for="imageURL">Image URL</label>
           <input
-              type='text'
-              id='imageURL'
-              name='image'
-              value={this.state.image}
-              onChange={e => this.handleChange(e)}
+            type='text'
+            id='imageURL'
+            name='image'
+            value={this.state.image}
+            onChange={e => this.handleChange(e)}
           />
         </div>
-        <button className="submit-tree" onClick={e => this.submitTree(e)}>Add Tree</button>
+        <h2>Please fill <em>EVERY</em> field before submitting</h2>
+        <button className="tree-button form-button" onClick={e => this.submitTree(e)}>Submit Your Tree!</button>
       </form>
     )
   }

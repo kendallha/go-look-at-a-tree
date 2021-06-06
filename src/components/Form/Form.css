@@ -6,10 +6,19 @@ form {
   height: 30rem;
 }
 
+form > h1 {
+  margin-top: 3rem;
+}
+
+form > h2 {
+  margin-top: 3rem;
+}
+
 .form-row {
   display: flex;
   width: 40rem;
   justify-content: space-between;
+  margin-top: 1rem;
 }
 
 label {
@@ -22,4 +31,8 @@ input {
   width: 70%;
   border-radius: .8rem;
   padding: .5rem;
+}
+
+.form-button {
+  margin-top: 1rem;
 }
