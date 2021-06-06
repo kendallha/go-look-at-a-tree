@@ -1,5 +1,13 @@
 form {
   display: flex;
   flex-direction: column;
-  
+  align-items: center;
+  justify-content: space-around;
+  height: 30rem;
+}
+
+.form-row {
+  display: flex;
+  width: 30rem;
+  justify-content: space-between;
 }
