@@ -22,7 +22,7 @@ class App extends Component {
         trees: fetchedTrees,
         currentTree: fetchedTrees[this.getRandomIndex(0, fetchedTrees.length - 1)]
       })
-    } catch (e) {
+    } catch (error) {
       this.setState({error: "No trees found. Smokey the bear is sad. Go look outside."})
     }
   }
@@ -35,9 +35,8 @@ class App extends Component {
     try {
       const postResponse = await createTree(newTree);
       this.setState({ trees: [...this.state.trees, newTree] })
-    } catch (e) {
-      const postResponse = await createTree(newTree);
-      this.setState({error: postResponse.message})
+    } catch (error) {
+      this.setState({error: error.message})
     }
   }
 
