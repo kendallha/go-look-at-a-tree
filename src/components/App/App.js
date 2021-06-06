@@ -39,8 +39,6 @@ class App extends Component {
       const postResponse = await createTree(newTree);
       this.setState({error: postResponse.message})
     }
-
-
   }
 
   setNewTree = () => {

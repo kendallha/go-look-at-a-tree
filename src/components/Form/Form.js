@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Error from '../ErrorMsg/Error'
 
 class Form extends Component {
   constructor() {
@@ -51,59 +52,64 @@ class Form extends Component {
 
   render() {
     return(
-      <form>
-        <h1>Add Your Favorite Tree</h1>
-        <input
-          type='text'
-          placeholder='Common name'
-          name='name'
-          value={this.state.name}
-          onChange={e => this.handleChange(e)}
-          />
-        <input
-          type='text'
-          placeholder='Scientific name'
-          name='scientific_name'
-          value={this.state.scientific_name}
-          onChange={e => this.handleChange(e)}
-          />
-        <input
-          type='text'
-          placeholder='Region'
-          name='region'
-          value={this.state.region}
-          onChange={e => this.handleChange(e)}
-          />
-        <input
-          type='text'
-          placeholder='Average height'
-          name='average_height'
-          value={this.state.average_height}
-          onChange={e => this.handleChange(e)}
-          />
-        <input
-          type='text'
-          placeholder='Lifespan'
-          name='lifespan'
-          value={this.state.lifespan}
-          onChange={e => this.handleChange(e)}
-          />
-        <input
-          type='text'
-          placeholder='Fun fact'
-          name='fact'
-          value={this.state.fact}
-          onChange={e => this.handleChange(e)}
-          />
-        <input
-          type='text'
-          placeholder='Image URL'
-          name='image'
-          value={this.state.image}
-          onChange={e => this.handleChange(e)}
-          />
-        <button onClick={e => this.submitTree(e)}>Add Tree</button>
-      </form>
+      <>
+        <form>
+          <h1>Add Your Favorite Tree</h1>
+          <input
+            type='text'
+            placeholder='Common name'
+            name='name'
+            value={this.state.name}
+            onChange={e => this.handleChange(e)}
+            />
+          <input
+            type='text'
+            placeholder='Scientific name'
+            name='scientific_name'
+            value={this.state.scientific_name}
+            onChange={e => this.handleChange(e)}
+            />
+          <input
+            type='text'
+            placeholder='Region'
+            name='region'
+            value={this.state.region}
+            onChange={e => this.handleChange(e)}
+            />
+          <input
+            type='text'
+            placeholder='Average height'
+            name='average_height'
+            value={this.state.average_height}
+            onChange={e => this.handleChange(e)}
+            />
+          <input
+            type='text'
+            placeholder='Lifespan'
+            name='lifespan'
+            value={this.state.lifespan}
+            onChange={e => this.handleChange(e)}
+            />
+          <input
+            type='text'
+            placeholder='Fun fact'
+            name='fact'
+            value={this.state.fact}
+            onChange={e => this.handleChange(e)}
+            />
+          <input
+            type='text'
+            placeholder='Image URL'
+            name='image'
+            value={this.state.image}
+            onChange={e => this.handleChange(e)}
+            />
+          <button onClick={e => this.submitTree(e)}>Add Tree</button>
+        </form>
+        {this.state.error &&
+          <Error error={this.state.error} />
+        }
+      </>
     )
   }
 }

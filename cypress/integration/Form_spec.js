@@ -61,8 +61,7 @@ describe('Form', () => {
         .get('form input[name="fact"]').type('tree fact')
     })
     it('Should only create a new tree if all input fields are filled out', () => {
-      //does it need an intercept so we don't make a bunch of trees?
-      //delete it after?
+
     })
     it('Should return an error message if the user does not fill out all input fields',() => {
       //does it need an intercept so we don't make a bunch of trees?
