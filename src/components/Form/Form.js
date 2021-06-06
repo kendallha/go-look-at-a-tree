@@ -38,6 +38,7 @@ class Form extends Component {
         this.setState({ confirmation: 'Your new tree has been added to our forest!'})
     } else {
       this.setState({ error: 'Please fill out all input fields'})
+      this.setState({ confirmation: null })
     }
   }
 
