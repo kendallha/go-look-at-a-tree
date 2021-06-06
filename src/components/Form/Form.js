@@ -34,6 +34,7 @@ class Form extends Component {
         this.props.addTree(newTree);
         this.clearInputs();
         this.setState({ error: null })
+        this.setState({ confirmation: 'Your new tree has been added to our forest!'})
     } else {
       this.setState({ error: 'Please fill out all input fields'})
     }
@@ -109,6 +110,9 @@ class Form extends Component {
         </form>
         {this.state.error &&
           <Error error={this.state.error} />
+        }
+        {this.state.confirmation &&
+          <h1 className='confirm-msg'>{this.state.confirmation}</h1>
         }
       </>
     )
