@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Error from '../ErrorMsg/Error'
+import './Form.css';
+import { createTree } from '../../utilities/ApiCalls'
 
 class Form extends Component {
   constructor() {
@@ -20,11 +23,24 @@ class Form extends Component {
 
   submitTree = (e) => {
     e.preventDefault();
-    const newTree = {
-      ...this.state
+    if (this.state.name &&
+      this.state.region &&
+      this.state.scientific_name &&
+      this.state.average_height &&
+      this.state.lifespan &&
+      this.state.fact &&
+      this.state.image) {
+        const newTree = {
+          ...this.state
+        }
+        this.addTree(newTree);
+
+        // this.setState({ error: null })
+
+    } else {
+      this.setState({ error: 'Please fill out all input fields'})
+      this.setState({ confirmation: null })
     }
-    this.props.addTree(newTree);
-    this.clearInputs();
   }
 
   clearInputs = () => {
@@ -39,61 +55,109 @@ class Form extends Component {
     })
   }
 
+  addTree = async (newTree) => {
+    try {
+      const postResponse = await createTree(newTree);
+      this.props.addTreeToState(newTree)
+      this.setState({ confirmation: 'Your new tree has been added to our forest!'})
+      this.clearInputs();
+    } catch (error) {
+      this.setState({error: error.message})
+    }
+  }
+
   render() {
     return(
-      <form>
-        <h1>Add Your Favorite Tree</h1>
-        <input
-          type='text'
-          placeholder='Common name'
-          name='name'
-          value={this.state.name}
-          onChange={e => this.handleChange(e)}
-          />
-        <input
-          type='text'
-          placeholder='Scientific name'
-          name='scientific_name'
-          value={this.state.scientific_name}
-          onChange={e => this.handleChange(e)}
-          />
-        <input
-          type='text'
-          placeholder='Region'
-          name='region'
-          value={this.state.region}
-          onChange={e => this.handleChange(e)}
-          />
-        <input
-          type='text'
-          placeholder='Average height'
-          name='average_height'
-          value={this.state.average_height}
-          onChange={e => this.handleChange(e)}
-          />
-        <input
-          type='text'
-          placeholder='Lifespan'
-          name='lifespan'
-          value={this.state.lifespan}
-          onChange={e => this.handleChange(e)}
-          />
-        <input
-          type='text'
-          placeholder='Fun fact'
-          name='fact'
-          value={this.state.fact}
-          onChange={e => this.handleChange(e)}
-          />
-        <input
-          type='text'
-          placeholder='Image URL'
-          name='image'
-          value={this.state.image}
-          onChange={e => this.handleChange(e)}
-          />
-        <button onClick={e => this.submitTree(e)}>Add Tree</button>
-      </form>
+      <>
+        <form>
+          <h1>Add Your Favorite Tree</h1>
+          <div className="form-row">
+            <label htmlFor="commonName">Common name</label>
+            <input
+              type='text'
+              id='commonName'
+              name='name'
+              value={this.state.name}
+              onChange={e => this.handleChange(e)}
+              required
+            />
+          </div>
+          <div className="form-row">
+            <label htmlFor="scientificName">Scientific name</label>
+            <input
+              type='text'
+              id='scientificName'
+              name='scientific_name'
+              value={this.state.scientific_name}
+              onChange={e => this.handleChange(e)}
+              required
+            />
+          </div>
+          <div className="form-row">
+            <label htmlFor="region">Region</label>
+            <input
+              type='text'
+              id='region'
+              name='region'
+              value={this.state.region}
+              onChange={e => this.handleChange(e)}
+              required
+            />
+          </div>
+          <div className="form-row">
+            <label htmlFor="averageHeight">Average height</label>
+            <input
+              type='text'
+              id='averageHeight'
+              name='average_height'
+              value={this.state.average_height}
+              onChange={e => this.handleChange(e)}
+              required
+            />
+          </div>
+          <div className="form-row">
+            <label htmlFor="lifespan">Lifespan</label>
+            <input
+              type='text'
+              id='lifespan'
+              name='lifespan'
+              value={this.state.lifespan}
+              onChange={e => this.handleChange(e)}
+              required
+            />
+          </div>
+          <div className="form-row">
+            <label htmlFor="funFact">Fun fact</label>
+            <input
+              type='text'
+              id='funFact'
+              name='fact'
+              value={this.state.fact}
+              onChange={e => this.handleChange(e)}
+              required
+            />
+          </div>
+          <div className="form-row">
+            <label htmlFor="imageURL">Image URL</label>
+            <input
+              type='text'
+              id='imageURL'
+              name='image'
+              value={this.state.image}
+              onChange={e => this.handleChange(e)}
+              required
+            />
+          </div>
+          <h2>Please fill <em>EVERY</em> field before submitting</h2>
+          <button className="tree-button form-button" onClick={e => this.submitTree(e)}>Submit Your Tree!</button>
+        </form>
+        {this.state.error &&
+          <Error error={this.state.error} />
+        }
+        {this.state.confirmation && !this.state.error &&
+          <h1 className='confirm-msg'>{this.state.confirmation}</h1>
+        }
+      </>
     )
   }
 }
