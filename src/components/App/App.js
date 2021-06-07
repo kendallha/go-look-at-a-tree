@@ -3,8 +3,9 @@ import './App.css';
 import TreeDisplay from '../TreeDisplay/TreeDisplay';
 import Header from '../Header/Header';
 import Form from '../Form/Form';
-import { Route } from 'react-router-dom';
-import { retrieveTrees } from '../../utilities/ApiCalls'
+import Error from '../ErrorMsg/Error';
+import { Route, Switch } from 'react-router-dom';
+import { retrieveTrees } from '../../utilities/ApiCalls';
 
 class App extends Component {
   constructor(props) {
@@ -37,7 +38,6 @@ class App extends Component {
 
 
   setNewTree = () => {
-    console.log(this.state.trees)
     this.setState({ currentTree: this.state.trees[this.getRandomIndex(0, this.state.trees.length - 1)] })
   }
 
@@ -45,6 +45,7 @@ class App extends Component {
     return (
       <>
         <Header setNewTree={this.setNewTree}/>
+        <Switch>
         <Route
           exact path='/'
           render={() => {
@@ -56,6 +57,10 @@ class App extends Component {
         <Route path='/addtree'>
           <Form addTreeToState={this.addTreeToState} />
         </Route>
+        <Route>
+          <Error error={`Page not found. Click 'Get a Tree' to return to the main page.`} />
+        </Route>
+        </Switch>
       </>
     )
   }
