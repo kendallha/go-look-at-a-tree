@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './App.css';
 import TreeDisplay from '../TreeDisplay/TreeDisplay';
 import Header from '../Header/Header';
 import Form from '../Form/Form';
@@ -35,7 +34,6 @@ class App extends Component {
   addTreeToState = (newTree) => {
     this.setState({ trees: [...this.state.trees, newTree] })
   }
-
 
   setNewTree = () => {
     this.setState({ currentTree: this.state.trees[this.getRandomIndex(0, this.state.trees.length - 1)] })
