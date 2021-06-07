@@ -3,6 +3,7 @@ import './App.css';
 import TreeDisplay from '../TreeDisplay/TreeDisplay';
 import Header from '../Header/Header';
 import Form from '../Form/Form';
+import Error from '../ErrorMsg/Error';
 import { Route, Switch } from 'react-router-dom';
 import { retrieveTrees } from '../../utilities/ApiCalls';
 
@@ -56,6 +57,9 @@ class App extends Component {
         />
         <Route path='/addtree'>
           <Form addTreeToState={this.addTreeToState} />
+        </Route>
+        <Route>
+          <Error error={`Page not found. Click 'Get a Tree' to return to the main page.`} />
         </Route>
         </Switch>
       </>
