@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './App.css';
 import TreeDisplay from '../TreeDisplay/TreeDisplay';
 import Header from '../Header/Header';
 import Form from '../Form/Form';
