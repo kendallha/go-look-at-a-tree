@@ -38,7 +38,6 @@ class App extends Component {
 
 
   setNewTree = () => {
-    console.log(this.state.trees)
     this.setState({ currentTree: this.state.trees[this.getRandomIndex(0, this.state.trees.length - 1)] })
   }
 
