@@ -16,9 +16,10 @@ form > h2 {
 
 .form-row {
   display: flex;
+  flex-direction: column;
   flex-wrap: nowrap;
+  align-items: center;
   width: 50%;
-  justify-content: space-between;
   margin-top: 1rem;
 }
 
@@ -40,9 +41,10 @@ input {
   margin-top: 1rem;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
   .form-row {
     width: 90%;
+    flex-direction: column;
   }
 }
 
@@ -58,6 +60,6 @@ input {
   }
 
   input {
-    width: 60%;
+    width: 80%;
   }
 }

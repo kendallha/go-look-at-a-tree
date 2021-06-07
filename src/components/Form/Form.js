@@ -79,6 +79,7 @@ class Form extends Component {
               name='name'
               value={this.state.name}
               onChange={e => this.handleChange(e)}
+              required
             />
           </div>
           <div className="form-row">
@@ -89,6 +90,7 @@ class Form extends Component {
               name='scientific_name'
               value={this.state.scientific_name}
               onChange={e => this.handleChange(e)}
+              required
             />
           </div>
           <div className="form-row">
@@ -99,6 +101,7 @@ class Form extends Component {
               name='region'
               value={this.state.region}
               onChange={e => this.handleChange(e)}
+              required
             />
           </div>
           <div className="form-row">
@@ -109,6 +112,7 @@ class Form extends Component {
               name='average_height'
               value={this.state.average_height}
               onChange={e => this.handleChange(e)}
+              required
             />
           </div>
           <div className="form-row">
@@ -119,6 +123,7 @@ class Form extends Component {
               name='lifespan'
               value={this.state.lifespan}
               onChange={e => this.handleChange(e)}
+              required
             />
           </div>
           <div className="form-row">
@@ -129,6 +134,7 @@ class Form extends Component {
               name='fact'
               value={this.state.fact}
               onChange={e => this.handleChange(e)}
+              required
             />
           </div>
           <div className="form-row">
@@ -139,6 +145,7 @@ class Form extends Component {
               name='image'
               value={this.state.image}
               onChange={e => this.handleChange(e)}
+              required
             />
           </div>
           <h2>Please fill <em>EVERY</em> field before submitting</h2>
