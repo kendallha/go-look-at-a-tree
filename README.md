@@ -11,15 +11,19 @@
 
  - This was a group project assigned by [Turing School of Software and Design](www.turing.edu).  We were given 10 days to complete an application utilizing an entirely new technology (or in our case, multiple technologies). Our group built a full-stack application from scratch, learning PostrgreSQL, Knex, and Express to build our first API, which we deployed to Heroku.
 
- - Our Turing instructors often encourage us to take a break from learning to code and "go look at a tree" to decompress, so we decided to honor that advice *while* learning to code. 
+ - Our Turing instructors often encourage us to take a break from learning to code and "go look at a tree" to decompress, so we decided to honor that advice *while* learning to code.
 
- ### Deploy Link
+### Deploy Link
 
-http://errm-rancid-tomatillos.surge.sh/
+http://golookatatree.surge.sh/
 
 ### Frontend Repo
 
 https://github.com/kendallha/go-look-at-a-tree
+
+### API Deploy Link
+
+https://go-look-at-a-tree-api.herokuapp.com/api/v1/trees
 
 ### Backend Repo
 
@@ -35,9 +39,6 @@ https://github.com/kendallha/go-look-at-a-tree-api
  - Utilized responsive design for mobile, tablet or desktop viewing
  - 100% Lighthouse accessibility score
 
-### Deploy Link
-
-http://errm-rancid-tomatillos.surge.sh/
 
 ## Installation
 1. Clone down this [repo](https://github.com/kendallha/go-look-at-a-tree)
@@ -52,26 +53,30 @@ http://errm-rancid-tomatillos.surge.sh/
 ### Home Page
   - When the application loads, a randomly chosen tree is displayed. To view another randomly chosen tree, click "Get a Tree".
 
- Desktop
 
-<img src="./public/rancid-home-page.gif" width="400">
+Desktop
 
-Tablet
+<img src="https://media.giphy.com/media/UfnQbDQY7zAOfMQB9c/giphy.gif" width="400">
 
-<img src="./public/rancid-tablet-view.gif" width="400">
 
 Mobile
 
-<img src="./public/rancid-mobile-view.gif" width="400">
+<img src="https://media.giphy.com/media/etjDoP9KDILY2io1gr/giphy.gif" width="400">
 
 
-<img src="./public/rancid-MovieInfo.gif" width="400">
+Clicking on "Add a Tree" brings users to a new page with a form to add a tree of their choosing.
 
-- Clicking on "Add a Tree" brings users to a new page with a form to add a tree of their choosing.
+<img src="https://media.giphy.com/media/YekhfBSeOEmszgxdmp/giphy.gif" width="400">
 
-<img src="./public/rancid-router-ability.gif" width="400">
 
-<img src="./public/rancid-search-movie.gif" width="400">
+An error is displayed if the user does not completely fill out the form
+
+<img src="https://media.giphy.com/media/ZsRzq3pbDd7USew5qc/giphy.gif" width="400">
+
+
+A confirmation message is displayed after a user successfully adds a new tree
+
+<img src="https://media.giphy.com/media/dDMX06YuheYOiWB0yB/giphy.gif" width="400">
 
 ## Contributors
 <table>
