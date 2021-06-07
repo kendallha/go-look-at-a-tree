@@ -5,11 +5,11 @@ form {
   justify-content: space-around;
 }
 
-form>h1 {
+form > h1 {
   text-align: center;
 }
 
-form>h2 {
+form > h2 {
   margin-top: 3rem;
   text-align: center;
 }
