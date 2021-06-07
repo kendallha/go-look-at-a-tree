@@ -64,10 +64,6 @@ describe('Form', () => {
       cy.get('form > button').click()
         .get('.error-msg').should('have.text', 'Error: Please fill out all input fields')
     })
-    it('Should return an error message if the image url is not properly formatted', () => {
-      //check that image path works in code? or if it doesn't, then on render provide a link for googling that type of tree???
-      //include directions for user to right click, click "copy image address", and use that link
-    })
     it('Should display a message stating the new tree was successfully created after the new tree is successfully created', () => {
       cy.get('form input[name="image"]').type('tree image')
       .intercept('POST', 'https://go-look-at-a-tree-api.herokuapp.com/api/v1/trees', {
