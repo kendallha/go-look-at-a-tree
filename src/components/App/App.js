@@ -3,8 +3,8 @@ import './App.css';
 import TreeDisplay from '../TreeDisplay/TreeDisplay';
 import Header from '../Header/Header';
 import Form from '../Form/Form';
-import { Route } from 'react-router-dom';
-import { retrieveTrees } from '../../utilities/ApiCalls'
+import { Route, Switch } from 'react-router-dom';
+import { retrieveTrees } from '../../utilities/ApiCalls';
 
 class App extends Component {
   constructor(props) {
@@ -45,6 +45,7 @@ class App extends Component {
     return (
       <>
         <Header setNewTree={this.setNewTree}/>
+        <Switch>
         <Route
           exact path='/'
           render={() => {
@@ -56,6 +57,7 @@ class App extends Component {
         <Route path='/addtree'>
           <Form addTreeToState={this.addTreeToState} />
         </Route>
+        </Switch>
       </>
     )
   }
