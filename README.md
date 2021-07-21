@@ -86,7 +86,7 @@ A confirmation message is displayed after a user successfully adds a new tree
 ## Contributors
 <table>
     <tr>
-        <td><a href="https://github.com/errabun">Riley Martin</td>
+        <td><a href="https://github.com/RMartin0717">Riley Martin</td>
          <td><a href="https://github.com/zachjjohns">Zach Johnson</td>
         <td><a href="https://github.com/kendallha">Kendall Haworth</td>
     </tr>
