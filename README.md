@@ -1,11 +1,17 @@
 # Go Look at a Tree
 
 ## Table of Contents
+* [Code Competition Award](#code-competition-award)
 * [Description](#description)
 * [Installation](#installation)
 * [Walkthrough](#walkthrough)
 * [Contributors](#contributors)
 * [Technologies](#technologies)
+
+
+## Code Competition Award
+
+This project won 3rd place in Turing School of Software & Design's July 2021 Demp Comp. Shared on LinkedIn [here.](https://www.linkedin.com/feed/update/urn:li:activity:6820733096292446208/)
 
 ## Description
 
@@ -29,10 +35,6 @@ https://go-look-at-a-tree-api.herokuapp.com/api/v1/trees
 
 https://github.com/kendallha/go-look-at-a-tree-api
 
-### Code Competition Award
-
-This project won 3rd place in Turing School of Software & Design's July 2021 Demp Comp. Shared on LinkedIn [here](https://www.linkedin.com/feed/update/urn:li:activity:6820733096292446208/)
-
 ### Notable features
 
  - Built using React framework
@@ -42,7 +44,6 @@ This project won 3rd place in Turing School of Software & Design's July 2021 Dem
  - Frontend tested with Cypress acceptance testing including the use of stubbed fetch data and happy/sad paths
  - Utilized responsive design for mobile, tablet or desktop viewing
  - 100% Lighthouse accessibility score
-
 
 ## Installation
 1. Clone down this [repo](https://github.com/kendallha/go-look-at-a-tree)
