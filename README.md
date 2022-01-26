@@ -29,6 +29,10 @@ https://go-look-at-a-tree-api.herokuapp.com/api/v1/trees
 
 https://github.com/kendallha/go-look-at-a-tree-api
 
+### Code Competition Award
+
+This project won 3rd place in Turing School of Software & Design's July 2021 Demp Comp. Shared on LinkedIn [here](https://www.linkedin.com/feed/update/urn:li:activity:6820733096292446208/)
+
 ### Notable features
 
  - Built using React framework
